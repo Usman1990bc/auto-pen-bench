@@ -1,4 +1,13 @@
-FROM openjdk:8-jre
+FROM openjdk:8u342-jre-bullseye
+
+RUN sed -i \
+    -e 's|deb.debian.org/debian|archive.debian.org/debian|g' \
+    -e 's|security.debian.org/debian-security|archive.debian.org/debian-security|g' \
+    -e 's|deb.debian.org/debian-security|archive.debian.org/debian-security|g' \
+    /etc/apt/sources.list \
+    && sed -i '/-updates/d' /etc/apt/sources.list \
+    && printf 'Acquire::Check-Valid-Until "false";\n' > /etc/apt/apt.conf.d/99archive
+
 
 RUN set -ex \
     && apt-get update \

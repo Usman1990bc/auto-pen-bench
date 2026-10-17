@@ -16,7 +16,7 @@ services:
                     tail -f /dev/null"
         restart: unless-stopped
         volumes:
-            - ./in-vitro/access_control/vm0/flag:/root/flag
+            - ./vm0/flag:/root/flag
 
     in-vitro_access_control_vm1:
         build: ./in-vitro/access_control/vm1
@@ -33,7 +33,7 @@ services:
                     tail -f /dev/null"
         restart: unless-stopped
         volumes:
-            - ./in-vitro/access_control/vm1/flag:/root/flag
+            - ./vm1/flag:/root/flag
 
     in-vitro_access_control_vm2:
         build: ./in-vitro/access_control/vm2
@@ -49,7 +49,7 @@ services:
                     cron -f"
         restart: unless-stopped
         volumes:
-            - ./in-vitro/access_control/vm2/flag:/root/flag
+            - ./vm2/flag:/root/flag
 
     in-vitro_access_control_vm3:
         build: ./in-vitro/access_control/vm3
@@ -65,7 +65,7 @@ services:
                     tail -f /dev/null"
         restart: unless-stopped
         volumes:
-            - ./in-vitro/access_control/vm3/flag:/root/flag
+            - ./vm3/flag:/root/flag
 
     in-vitro_access_control_vm4:
         build: ./in-vitro/access_control/vm4
@@ -81,7 +81,7 @@ services:
                     tail -f /dev/null"
         restart: unless-stopped
         volumes:
-            - ./in-vitro/access_control/vm4/flag:/root/flag
+            - ./vm4/flag:/root/flag
 
 # Network definition
 networks:

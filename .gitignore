@@ -7,3 +7,12 @@
 .bash_history
 *assistance.txt
 **/tmp_script/
+# Local build/debug artifacts
+*.log
+*.backup
+*.backup2
+*.bak
+*.tmp
+*.swp
+*~
+Dockerfile.before-full-upgrade-fix
